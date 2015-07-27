@@ -1,0 +1,15 @@
+{
+  "name": "depo",
+  "version": "0.0.1",
+  "description": "practicing deployment",
+  "main": "",
+  "license": "Proprietary",
+  "scripts": {
+    "start": "node myServer.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.13.1",
+    "express": "^4.13.0"
+    
+  }
+}
