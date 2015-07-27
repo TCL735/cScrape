@@ -29,7 +29,7 @@ app.get("/test", function(req, res) {
 
               }, function(result) {
                 console.log(result);
-                res.send(result);
+                res.json(result);
                 ph.exit()
               });
             }, 2000);
