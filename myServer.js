@@ -17,7 +17,7 @@ app.get("/test", function(req, res) {
     phantom.create(function(ph) {
       ph.createPage(function(page) {
         page.open("http://blog.arisetyo.com/", function(status) {
-          console.log("opened Page?", status);
+
           page.includeJs("http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js", function(){
             setTimeout(function() {
               return page.evaluate(function() {
@@ -28,9 +28,8 @@ app.get("/test", function(req, res) {
                 return text;
 
               }, function(result) {
-                console.log(result);
-                res.json(result);
                 ph.exit()
+                res.json(result);
               });
             }, 2000);
           });
