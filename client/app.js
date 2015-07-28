@@ -1,7 +1,7 @@
 $(function() {
   $("button").on("click", function() {
     $.ajax({
-      url: "/grabData",
+      url: "https://glacial-waters-2127.herokuapp.com/getData",
       type: "GET",
       dataType: "json",
       success: function(data) {
