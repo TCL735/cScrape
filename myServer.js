@@ -118,8 +118,8 @@ app.get("/getData", function(req, res) {
 
             }, function(result) {
               console.log(result);
-              res.send(result);
               ph.exit()
+              res.json(result);
             });
           }, 2000);
         });
