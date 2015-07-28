@@ -102,7 +102,7 @@ app.get("/test", function(req, res) {
 });
 
 
-app.get("/getData", function(req, res) {
+app.get("/grabData", function(req, res) {
   phantom.create(function(ph) {
     ph.createPage(function(page) {
       page.open("http://blog.arisetyo.com/", function(status) {
