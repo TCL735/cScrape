@@ -101,6 +101,33 @@ app.get("/test", function(req, res) {
 
 });
 
+
+app.get("/getData", function(req, res) {
+  phantom.create(function(ph) {
+    ph.createPage(function(page) {
+      page.open("http://blog.arisetyo.com/", function(status) {
+        console.log("opened Page?", status);
+        page.includeJs("http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js", function(){
+          setTimeout(function() {
+            return page.evaluate(function() {
+
+              var actualResults = [];
+              var text = $(".entry-title").children().first().text();
+              actualResults.push(text);
+              return text;
+
+            }, function(result) {
+              console.log(result);
+              res.send(result);
+              ph.exit()
+            });
+          }, 2000);
+        });
+      });
+    });
+  });
+});
+
 app.listen(app.get("port"), function() {
   console.log("Server is running!");
 }); 
