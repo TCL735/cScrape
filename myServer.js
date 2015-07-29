@@ -145,7 +145,7 @@ app.get("/grabData", function(req, res) {
 
 
 var job = new CronJob({
-  cronTime: '00 11 17 * * 1-5',
+  cronTime: '00 16 17 * * 1-5',
   onTick: function() {
 
     phantom.create(function(ph) {
