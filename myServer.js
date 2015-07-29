@@ -138,7 +138,7 @@ app.get("/funTest", function(req, res) {
 
 app.get("/grabData", function(req, res) {
   fs.readFile('data.js', 'utf8', function(err, data) {
-    res.json(JSON.parse(data));
+    res.json(data);
   });
 });
 
