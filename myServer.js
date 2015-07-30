@@ -145,7 +145,7 @@ app.get("/grabData", function(req, res) {
 
 
 var job = new CronJob({
-  cronTime: '00 22 17 * * 1-5',
+  cronTime: '00 23 19 * * 1-5',
   onTick: function() {
 
     phantom.create(function(ph) {
@@ -172,7 +172,7 @@ var job = new CronJob({
                       return page.evaluate(function() {
                         var stopMe = setInterval(function() {
                           document.body.scrollTop = document.body.scrollHeight;
-                        }, 1800);
+                        }, 2300);
                         return stopMe;
                       }, function(result3) {
                         console.log("result3: ", result3);
@@ -215,7 +215,6 @@ var job = new CronJob({
                                 return JSON.stringify(results);                                        
 
                               }, function(result5) {
-                                console.log(result5);
                                 ph.exit();
                                 fs.writeFile('data.js', JSON.stringify(result5), function(err) {
                                   if (err) throw err;
@@ -224,7 +223,7 @@ var job = new CronJob({
                               });  
                             }, 3000);
                           })
-                        }, 401000);
+                        }, 551000);
                       });
                     }, 2000)
                   });
