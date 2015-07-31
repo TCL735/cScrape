@@ -59,7 +59,7 @@ app.get("/grabData", function(req, res) {
 
 
 var job = new CronJob({
-  cronTime: '00 17 15 * * 1-5',
+  cronTime: '00 02 23 * * 1-5',
   onTick: function() {
 
     phantom.create(function(ph) {
@@ -157,7 +157,7 @@ var job = new CronJob({
 
 
 var theRequester = new CronJob({
-  cronTime: '00 19 15 * * 1-5',
+  cronTime: '00 05 23 * * 1-5',
   onTick: function() {
 
     var stopRequests = setInterval(function() {
@@ -170,7 +170,7 @@ var theRequester = new CronJob({
 
     setTimeout(function() {
       clearInterval(stopRequests);
-    }, 3600000);
+    }, 4600000);
 
   },
   start: false,
