@@ -64,14 +64,14 @@ var job = new CronJob({
 
     phantom.create(function(ph) {
       ph.createPage(function(page) {
-        page.open("https://angel.co/login?utm_source=top_nav_home", function(status) {
+        page.open("XXXXXXXXXXXXXXXX", function(status) {
           console.log("opened Page?", status);
           page.includeJs("http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js", function(){
             setTimeout(function() {
               return page.evaluate(function() {
                 //logging into account
-                $("#user_email").val("testme777@gmail.com");
-                $("#user_password").val("bobthebuilder");
+                $("#user_email").val("XXXXXXXXXXX");
+                $("#user_password").val("XXXXXXXXXXXX");
                 $("input").last().click();
 
               }, function(result1) {
@@ -161,7 +161,7 @@ var theRequester = new CronJob({
   onTick: function() {
 
     var stopRequests = setInterval(function() {
-      http.get("http://glacial-waters-2127.herokuapp.com/", function(res) {
+      http.get("XXXXXXXXXXX", function(res) {
         console.log("Pinged the server");
       }).on("error", function(e) {
         console.log("Error: " + e.message);
